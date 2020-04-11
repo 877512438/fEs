@@ -35,9 +35,13 @@ class Datatable extends Admin
      */
     public function showTable(){
         $getData = $this->request()->getRequestParam('dbName','tableName');
-        $sql = "SHOW TABLE STATUS FROM `{$getData['dbName']}`";
+        if(!isset($getData['db_name']))
+            $getData['db_name'] = DbManager::getInstance()->getConnection()->getConfig()->getUser();
+
+        $sql = "SHOW TABLE STATUS FROM `{$getData['db_name']}`";
         if(!empty($getData['tableName']))
-            $sql .= " WHERE NAME LIKE '%{$getData['tableName']}%' OR Comment LIKE '%{$getData['tableName']}%'";
+            $sql .= " WHERE NAME LIKE '%{$getData['table_name']}%' OR Comment LIKE '%{$getData['table_name']}%'";
+
         $sql .= ";";
         $queryBuild = new QueryBuilder();
         $res = DbManager::getInstance()->query($queryBuild->raw($sql),true)->getResult();
