@@ -1,0 +1,23 @@
+[2020-03-26 17:26:56 *6739.1]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Class App\HttpController\Admin contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (EasySwoole\Http\AbstractInterface\Controller::index) in /www/wwwroot/easyswoole/App/HttpController/Admin.php on line 9
+[2020-03-26 17:26:56 $6735.0]	WARNING	swManager_check_exit_status: worker#1[pid=6739] abnormal exit, status=255, signal=0
+[2020-03-26 17:27:04 *6759.1]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Class App\HttpController\Admin contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (EasySwoole\Http\AbstractInterface\Controller::index) in /www/wwwroot/easyswoole/App/HttpController/Admin.php on line 9
+[2020-03-26 17:27:04 $6755.0]	WARNING	swManager_check_exit_status: worker#1[pid=6759] abnormal exit, status=255, signal=0
+[2020-03-26 17:27:47 *6796.1]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Class App\HttpController\Admin contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (EasySwoole\Http\AbstractInterface\Controller::index) in /www/wwwroot/easyswoole/App/HttpController/Admin.php on line 9
+[2020-03-26 17:27:47 $6792.0]	WARNING	swManager_check_exit_status: worker#1[pid=6796] abnormal exit, status=255, signal=0
+[2020-04-03 18:05:42 #64441.2]	INFO	Server is shutdown now
+[2020-04-03 18:05:44 $64442.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-03 18:05:45 $64442.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 #11297.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 #11297.2]	INFO	Server is shutdown now
+[2020-04-10 18:09:17 *11302.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11301.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11303.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11305.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11307.6]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11306.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11306.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11304.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11304.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11308.7]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 *11308.7]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-10 18:09:17 $11298.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
