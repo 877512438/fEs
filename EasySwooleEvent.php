@@ -34,6 +34,13 @@ class EasySwooleEvent implements Event
         $dbConfig->setUser($mySqlConf['user']);
         $dbConfig->setPassword($mySqlConf['password']);
         $dbConfig->setDatabase($mySqlConf['database']);
+        //link pool config
+        $dbConfig->setGetObjectTimeout(3.0);
+        $dbConfig->setIntervalCheckTime(30*1000);
+        $dbConfig->setMaxIdleTime(15);
+        $dbConfig->setMaxObjectNum(20);
+        $dbConfig->setMinObjectNum(5);
+        $dbConfig->setAutoPing(5);
         DbManager::getInstance()->addConnection(new Connection($dbConfig));
 
 

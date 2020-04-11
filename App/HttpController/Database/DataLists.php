@@ -7,7 +7,6 @@ namespace App\HttpController\Database;
 use App\HttpController\Admin\Admin;
 use EasySwoole\Mysqli\QueryBuilder;
 use EasySwoole\ORM\DbManager;
-use EasySwoole\ORM\Exception\Exception;
 
 class DataLists extends Admin
 {
@@ -33,15 +32,20 @@ class DataLists extends Admin
     public function fields(){
 
 
+        $search = [];
+        $fields = [];
 
 
 
+        $this->writeJson(200,['search'=>$search,'fields'=>$fields]);
     }
 
 
     public function lists(){
         $getData = $this->request()->getRequestParam();
-        $getData['table_name'];
+        if(!isset($getData['table_name']))
+            throw new \Exception('not model');
+
 
         $builder = new QueryBuilder();
         $lists = $this->queryRes($builder->get('test'));
@@ -50,5 +54,11 @@ class DataLists extends Admin
         $this->writeJson(200,$lists,'ok');
     }
 
+
+    public function edit(){}
+
+    public function add(){}
+
+    public function del(){}
 
 }
