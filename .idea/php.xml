@@ -25,6 +25,7 @@
       <path value="$PROJECT_DIR$/vendor/easyswoole/orm" />
       <path value="$PROJECT_DIR$/vendor/easyswoole/ddl" />
       <path value="$PROJECT_DIR$/vendor/easyswoole/pool" />
+      <path value="$PROJECT_DIR$/vendor/easyswoole/redis" />
     </include_path>
   </component>
 </project>

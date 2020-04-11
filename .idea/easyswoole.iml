@@ -15,6 +15,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/mysqli" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/orm" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/pool" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/redis" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/spl" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/task" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/trigger" />

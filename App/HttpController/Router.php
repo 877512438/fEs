@@ -17,6 +17,8 @@ class Router extends AbstractRouter
         $routeCollector->get('/','/index');
         $routeCollector->get('/ct','/Database/Datatable/createTable');
         $routeCollector->get('/db/hastb/{dbName}/{tableName}','/Database/Datatable/hasTable');
+
+        $routeCollector->get('/model/lists/{table_name}','/Database/DataLists/lists');
     }
 
 }

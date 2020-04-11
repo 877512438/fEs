@@ -19,6 +19,7 @@ class EasySwooleEvent implements Event
         date_default_timezone_set('Asia/Shanghai');
 
 
+        self::loadConf();
     }
 
     public static function mainServerCreate(EventRegister $register)
@@ -26,11 +27,13 @@ class EasySwooleEvent implements Event
         // TODO: Implement mainServerCreate() method.
 
         //create orm config
+        $mySqlConf = Config::getInstance()->getConf('config.mysql_conf');
         $dbConfig = new \EasySwoole\ORM\Db\Config();
-        $dbConfig->setDatabase('db_es_cms');
-        $dbConfig->setUser('db_es_cms');
-        $dbConfig->setPassword('1234560');
-        $dbConfig->setHost('127.0.0.1');
+        $dbConfig->setHost($mySqlConf['host']);
+        $dbConfig->setPort($mySqlConf['port']);
+        $dbConfig->setUser($mySqlConf['user']);
+        $dbConfig->setPassword($mySqlConf['password']);
+        $dbConfig->setDatabase($mySqlConf['database']);
         DbManager::getInstance()->addConnection(new Connection($dbConfig));
 
 
@@ -60,7 +63,7 @@ class EasySwooleEvent implements Event
     public static function loadConf(){
 
         //
-        $files = File::scanDirectory(EASYSWOOLE_ROOT .'App/Confif');
+        $files = File::scanDirectory(EASYSWOOLE_ROOT .'/App/Config');
 
         if(is_array($files)){
             foreach ($files['files'] as $file){
@@ -69,8 +72,6 @@ class EasySwooleEvent implements Event
                 if($fileSuffix == 'php'){
                     \EasySwoole\EasySwoole\Config::getInstance()->loadFile($file);//
                 }
-
-
             }
         }
 

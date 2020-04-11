@@ -7,9 +7,17 @@ namespace App\HttpController\Database;
 use App\HttpController\Admin\Admin;
 use EasySwoole\Mysqli\QueryBuilder;
 use EasySwoole\ORM\DbManager;
+use EasySwoole\ORM\Exception\Exception;
 
 class Datatable extends Admin
 {
+
+
+    public function onException(\Throwable $throwable): void
+    {
+
+        $this->writeJson(200,$throwable->getMessage(),'error');
+    }
 
     /**
      * QUERY_SQL
@@ -19,7 +27,7 @@ class Datatable extends Admin
     protected function querySql(string $sql){
         try{
             $queryBuild = new QueryBuilder();
-            DbManager::getInstance()->query($queryBuild->raw($sql),true);
+            return DbManager::getInstance()->query($queryBuild->raw($sql),true)->getResult();
         }catch (\Exception $e){
             $this->writeJson(200,['msg'=>$e->getMessage(),'code'=>$e->getCode()],'error');
             return;
@@ -57,6 +65,9 @@ class Datatable extends Admin
         if($dbName == null)
             $dbName = DbManager::getInstance()->getConnection()->getConfig()->getUser();
 
+        if(!isset($tableName) || empty($tableName))
+            throw new Exception('Undefined index: table_name');
+
         $sql = "SHOW TABLE STATUS FROM `{$dbName}` WHERE NAME = '{$tableName}' ;";
         $queryBuild = new QueryBuilder();
         $res = DbManager::getInstance()->query($queryBuild->raw($sql),true)->getResult();
@@ -84,6 +95,10 @@ class Datatable extends Admin
 //        ];
 
         $getData = $this->request()->getRequestParam();
+
+        if(!isset($getData['table_name']))
+            throw new \Exception('Undefined index: table_name');
+
         if($this->hasTable($getData['table_name'])){
             $this->writeJson(200,['code'=>0,'msg'=>'has old table'],'success');
             return;
